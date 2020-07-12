@@ -1,1 +1,0 @@
-window.Ent3D = {};
