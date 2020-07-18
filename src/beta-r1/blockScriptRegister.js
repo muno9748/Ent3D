@@ -100,13 +100,15 @@ Object.defineProperty(window, 'Ent3DGLRenderingHelper', { value: Ent3D.glRendere
         Ent3DGLRenderingHelper.camera.rotation.set(0, 0, 0);
     });
 
-    croodinateUpdateInterval = setInterval(() => {
-        mouseCoordinate = {
-            x: ((Ent3D.realMouseCoordinate || 0).x / +getComputedStyle(entry3DCanvas).width.replace("px", "")) * 2 - 1,
-            y: ((Ent3D.realMouseCoordinate || 0).y / +getComputedStyle(entry3DCanvas).height.replace("px", "")) * 2 - 1
-        };
-        Ent3D.mouseCoordinate = mouseCoordinate;
-    }, 1000 / 60 /* 60 FPS */);
+    Entry.addEventListener('run', () => {
+        croodinateUpdateInterval = setInterval(() => {
+            mouseCoordinate = {
+                x: ((Ent3D.realMouseCoordinate || 0).x / +getComputedStyle(entry3DCanvas).width.replace("px", "")) * 2 - 1,
+                y: ((Ent3D.realMouseCoordinate || 0).y / +getComputedStyle(entry3DCanvas).height.replace("px", "")) * 2 - 1
+            };
+            Ent3D.mouseCoordinate = mouseCoordinate;
+        }, 1000 / 60 /* 60 FPS */);
+    })
 
     Ent3D.Ent3DScripts = {
         Ent3D_setRendererClearColor(sprite, script) {
@@ -211,7 +213,7 @@ Object.defineProperty(window, 'Ent3DGLRenderingHelper', { value: Ent3D.glRendere
             const geometry = new THREE.BoxGeometry();
             const material = new THREE.MeshBasicMaterial({ color: COLOR });
             const mesh = new THREE.Mesh(geometry, material);
-            Ent3DGLRenderingHelper.scene.add(mesh);
+            addObject(OBJNAME, mesh);
         },
         Ent3D_deleteObject(sprite, script) {
             const OBJNAME = script.getValue('OBJNAME', script);
