@@ -17,6 +17,10 @@ Object.defineProperty(window, 'Ent3DGLRenderingHelper', { value: Ent3D.glRendere
         entryCanvas.dispatchEvent(a)
     });
 
+    document.addEventListener('mousemove', e => {
+        Ent3D.realMouseCoordinate = { x: e.pageX, y: e.pageY }
+    })
+
     Ent3DGLRenderingHelper.renderer.domElement.addEventListener('mousedown', e => {
         var a = document.createEvent('MouseEvent');
         a.initMouseEvent(
@@ -98,8 +102,8 @@ Object.defineProperty(window, 'Ent3DGLRenderingHelper', { value: Ent3D.glRendere
 
     croodinateUpdateInterval = setInterval(() => {
         mouseCoordinate = {
-            x: (Entry.mouseCoordinate.x / +getComputedStyle(entry3DCanvas).width.replace("px", "")) * 2 - 1,
-            y: (Entry.mouseCoordinate.y / +getComputedStyle(entry3DCanvas).height.replace("px", "")) * 2 - 1
+            x: ((Ent3D.realMouseCoordinate || 0).x / +getComputedStyle(entry3DCanvas).width.replace("px", "")) * 2 - 1,
+            y: ((Ent3D.realMouseCoordinate || 0).y / +getComputedStyle(entry3DCanvas).height.replace("px", "")) * 2 - 1
         };
         Ent3D.mouseCoordinate = mouseCoordinate;
     }, 1000 / 60 /* 60 FPS */);
