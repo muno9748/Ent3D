@@ -172,7 +172,7 @@ Object.defineProperty(window, 'Ent3DGLRenderingHelper', { value: Ent3D.glRendere
             Ent3DGLRenderingHelper.camera.lookAt(findObject(OBJNAME).position);
         },
         Ent3D_lookAtCameraMousePointer() {
-            Ent3DGLRenderingHelper.camera.lookAt(new Vector3(mouseCoordinate.x * 3, -mouseCoordinate.y * 3, 0))
+            Ent3DGLRenderingHelper.camera.lookAt(new Vector3(mouseCoordinate.x * 3, -(mouseCoordinate.y - 1) * 3, 0))
         },
         Ent3D_setCameraPosition(sprite, script) {
             const DIRECTION = script.getValue('DIRECTION', script).toLowerCase();
