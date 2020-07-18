@@ -1,0 +1,15 @@
+{
+    "out": "dist/bundle-{{version}}.js",
+    "order": [
+        "src/d.js",
+        "src/log.js",
+        "src/createjsLoader.js",
+        "src/EntryCanvasCaptureboard-1.0.min.js",
+        "src/EntLibrary-2.0.min.js",
+        "src/{{version}}/GLRenderer.js",
+        "src/{{version}}/iconFixer.js",
+        "src/{{version}}/blockScriptRegister.js",
+        "src/{{version}}/blockCreator.js",
+        "src/projectLoader.js"
+    ]
+}

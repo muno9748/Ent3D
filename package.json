@@ -1,0 +1,22 @@
+{
+  "name": "ent3d",
+  "version": "1.0.0",
+  "description": "Three-Dimension rendering plugin for Entry using ThreeJS",
+  "main": "bundler.js",
+  "dependencies": {
+    "@babel/core": "^7.10.5",
+    "babel-preset-minify": "^0.5.1"
+  },
+  "devDependencies": {},
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/muno9748/Ent3D.git"
+  },
+  "author": "muno9748",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/muno9748/Ent3D/issues"
+  },
+  "homepage": "https://github.com/muno9748/Ent3D#readme"
+}
