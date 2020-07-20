@@ -479,7 +479,7 @@ new EntLibrary.CustomBlock('Ent3D_adjustCameraPosition')
     .attach()
 
 new EntLibrary.CustomBlock('Ent3D_setCameraRotation')
-    .setTemplate('카메라 %1축의 방향를 %2로 정하기 %3')
+    .setTemplate('카메라 %1축의 방향을 %2로 정하기 %3')
     .setSkeleton('basic')
     .setClass('Camera')
     .setParams({
@@ -884,7 +884,7 @@ new EntLibrary.CustomBlock('Ent3D_adjustObjectPosition')
     .attach()
 
 new EntLibrary.CustomBlock('Ent3D_setObjectRotation')
-    .setTemplate('%1 이름의 오브젝트의 %2축 방향를 %3으로 정하기 %4')
+    .setTemplate('%1 이름의 오브젝트의 %2축 방향을 %3으로 정하기 %4')
     .setSkeleton('basic')
     .setColor('#ED7D31', '#DB6413', '#ffffff')
     .setParams({
