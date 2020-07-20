@@ -190,13 +190,13 @@ Object.defineProperty(window, 'Ent3DGLRenderingHelper', { value: Ent3D.glRendere
             const DIRECTION = script.getValue('DIRECTION', script).toLowerCase();
             const VALUE = script.getNumberValue('VALUE', script);
             if(isNaN(VALUE)) return;
-            Ent3DGLRenderingHelper.camera.rotation[DIRECTION] = Math.radians(Math.VALUE);
+            Ent3DGLRenderingHelper.camera.rotation[DIRECTION] = Math.radians(VALUE);
         },
         Ent3D_adjustCameraRotation(sprite, script) {
             const DIRECTION = script.getValue('DIRECTION', script).toLowerCase();
             const VALUE = script.getNumberValue('VALUE', script);
             if(isNaN(VALUE)) return;
-            Ent3DGLRenderingHelper.camera.rotation[DIRECTION] += Math.radians(Math.VALUE);
+            Ent3DGLRenderingHelper.camera.rotation[DIRECTION] += Math.radians(VALUE);
         },
         Ent3D_cameraPosition(sprite, script) {
             const DIRECTION = script.getValue('DIRECTION', script).toLowerCase();
@@ -242,7 +242,7 @@ Object.defineProperty(window, 'Ent3DGLRenderingHelper', { value: Ent3D.glRendere
             const VALUE = script.getNumberValue('VALUE', script);
             if(!objectExist(OBJNAME)) return throwError(`'${OBJNAME}' 이름의 오브젝트를 찾을수 없습니다.`);
             if(isNaN(VALUE)) return;
-            findObject(OBJNAME).rotation[DIRECTION] = VALUE;
+            findObject(OBJNAME).rotation[DIRECTION] = Math.radians(VALUE);
         },
         Ent3D_adjustObjectRotation(sprite, script) {
             const OBJNAME = script.getValue('OBJNAME', script);
@@ -250,7 +250,7 @@ Object.defineProperty(window, 'Ent3DGLRenderingHelper', { value: Ent3D.glRendere
             const VALUE = script.getNumberValue('VALUE', script);
             if(!objectExist(OBJNAME)) return throwError(`'${OBJNAME}' 이름의 오브젝트를 찾을수 없습니다.`);
             if(isNaN(VALUE)) return;
-            findObject(OBJNAME).rotation[DIRECTION] = findObject(OBJNAME).rotation[DIRECTION] + VALUE;
+            findObject(OBJNAME).rotation[DIRECTION] = findObject(OBJNAME).rotation[DIRECTION] + Math.radians(VALUE);
         },
         Ent3D_objectPosition(sprite, script) {
             const OBJNAME = script.getValue('OBJNAME', script);
