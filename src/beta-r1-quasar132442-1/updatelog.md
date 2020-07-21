@@ -1,4 +1,6 @@
 ```typescript
+// from 'beta-r1'
+
 // added function
 clearObject()
 
